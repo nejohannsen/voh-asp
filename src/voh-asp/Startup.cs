@@ -42,6 +42,7 @@ namespace voh_asp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddOptions();
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
@@ -54,9 +55,16 @@ namespace voh_asp
 
             services.AddMvc();
 
+            services.AddTransient<IFileUpload, FileUpload>();
+
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
+
+            var AWSAccessKeyId = Configuration["AWSSecrets:AWSAccessKeyId"];
+            var AWSSecretAccessKey = Configuration["AWSSecrets:AWSSecretAccessKey"];
+
+            services.AddTransient<IAWSSecrets>(_ => new AWSSecrets(AWSAccessKeyId, AWSSecretAccessKey));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

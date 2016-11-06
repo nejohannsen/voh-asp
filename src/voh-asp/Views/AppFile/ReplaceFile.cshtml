@@ -1,0 +1,8 @@
+﻿@model FileReplaceViewModel
+
+<form asp-action="ReplaceFile" method="post" enctype="multipart/form-data">
+    <input asp-for="dbFile.AppFileId" type="hidden" value="@Model.dbFile.AppFileId" /> <br />
+    <input type="file" asp-for="localFile" multiple /><br />
+    
+    <button type="submit">Replace</button>
+</form>

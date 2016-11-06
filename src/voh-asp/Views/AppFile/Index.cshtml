@@ -1,0 +1,40 @@
+﻿@model List<AppFile>
+<!--Wroung way to do this. Create view model later toget the links.-->
+@using voh_asp.Services
+@inject IFileUpload _fileUpload
+
+<div class="row">
+    <br />
+    <a class="btn btn-default" asp-action="UploadFile">Upload New File</a>
+</div>
+<div class="row">
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Name (Empty)</th>
+            <th>Bucket</th>
+            <th>Path</th>
+            <th>ID</th>
+            <th>File Name</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var file in Model)
+        {
+            <tr>
+                <td>@file.Name</td>
+                <td>@file.AWSBucket</td>
+                <td>@file.Path</td>
+                <td>@file.AppFileId</td>
+                <td>@file.FileName</td>
+                <td>
+                    <a href="@_fileUpload.CreateURL(file)">Download</a>
+                    |
+                    <a asp-action="ReplaceFile" asp-route-id="@file.AppFileId">Replace</a>
+                    |
+                    <a asp-action="DeleteFile" asp-route-id="@file.AppFileId">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

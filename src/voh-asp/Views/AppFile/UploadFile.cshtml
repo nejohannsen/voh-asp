@@ -1,0 +1,7 @@
+﻿@model AppFile
+@using (Html.BeginForm("UploadFile", "AppFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" asp-for="@Model.AppFileId" />
+    <input type="file" name="file" />
+    <input type="submit" value="OK" />
+}

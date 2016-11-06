@@ -12,6 +12,9 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
+        "AWSSecrets.AWSSecretAccessKey": "Temp",
+        "AWSBucket": "voh-dev",
+        "AWSSecrets.AWSAccessKeyId": "Temp",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
