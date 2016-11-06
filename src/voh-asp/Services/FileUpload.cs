@@ -144,7 +144,6 @@ namespace voh_asp.Services
             {
                 string keyName = dbFile.Path + "/" + dbFile.AppFileId + "/" + dbFile.FileName;
 
-                //AKIAJZNBCB7FAUTJJD7A
                 TransferUtility fileTransferUtility =
                      new TransferUtility(new AmazonS3Client(_secrets.AWSAccessKeyId,
                                                             _secrets.AWSSecretAccessKey,
