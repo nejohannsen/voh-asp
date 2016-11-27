@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8c3+UWB/iEy7BNsl9dKLLgAAAAACAAAAAAADZgAAwAAAABAAAADRYmQtkD2Chm4sGgiRTGJCAAAAAASAAACgAAAAEAAAAODUGAloF4kWd/nHrXgG4XiAAAAAaVncaJwN/H/V4F35pqeWCxiElOlpX6tDU+hoEUNQj1+TDyr2NJAL2PytgjkTFA0rSO3+jWSjOuWHE8oCAd5EXQsa6/dgJaZ4T6+H9DpoqIrrqRdCvUI89uvKET+OIcDw/S/uc0419qfQ2vCpUydpb6jJzxnfvtT/SOKmL8xN+0MUAAAAH4QO0igJnTDN/UYFB+xReIT2pVw=</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:asp-db.database.windows.net,1433;Initial Catalog=voh-asp-sql;User Id=dbmaster@asp-db.database.windows.net;Password=#EDCmko0;</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EfMigrations Include="voh_asp.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:asp-db.database.windows.net,1433;Initial Catalog=voh-asp-sql;User Id=dbmaster@asp-db.database.windows.net;Password=#EDCmko0;</Value>
+    </EfMigrations>
+  </ItemGroup>
+</Project>
